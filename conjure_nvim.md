@@ -15,7 +15,7 @@
 1. open a file in your project.  It should pick up the same nREPL port via the .nrepl-port file created by `clj`
   1. if not `:ConjureConnect: {.nrepl-port}`
 
-### Connecting to project clj repl
+### Connecting to shadow-cljs repl
 1. run `shadow-cljs compile {key from shadow-cljs.edn}` next to the edn.
 1. open a file in your project
 1. `:ConjureShadowSelect {key from edn}` 
