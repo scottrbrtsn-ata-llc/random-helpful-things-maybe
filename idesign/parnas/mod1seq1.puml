@@ -1,0 +1,17 @@
+@startuml
+entity Input as Input
+entity Circular as CS
+entity Alphabetizer as Alpha
+database Core as Core
+entity Output as Out
+Input --> Core : Adds init ixs to core
+Input -> Out : Input can go straight out
+Input -> CS
+Core --> CS : Gets input from core
+CS --> Core : Shifted ixs to core
+CS -> Alpha
+Core --> Alpha : Gets circular shifts from core
+Alpha --> Core: Stores alphabetized shifts 
+Alpha -> Out : Alphabetized circular shifts go out
+
+@enduml

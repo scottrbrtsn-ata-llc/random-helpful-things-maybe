@@ -1,0 +1,22 @@
+@startuml
+entity Input as Input
+entity "Line Storage" as LS 
+entity Circular as CS
+entity Alphabetizer as Alpha
+database InternalMem as Mem
+entity Output as Out
+
+Input --> LS : Sends input to Line Storage
+Input -> LS
+LS --> Mem : Saves to InternalMem
+LS -> CS
+CS --> LS : Reads from Line Storage
+CS --> LS : Updates Line Storage with all shifts
+CS -> Alpha
+LS --> Alpha : Reads from Line Storage
+Alpha --> LS : Updates Line Storage with each CS alphabetized
+Alpha -> Out
+Out --> CS : get desired circular shift
+CS --> Out : return the shift
+
+@enduml

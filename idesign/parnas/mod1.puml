@@ -1,0 +1,22 @@
+@startuml
+package "Mod1" {
+  [Input1]
+  [Circular Shift]
+  [Alphabetizing]
+  [Output]
+  [Master Control]
+  
+}
+
+[My File1] --> [Input1]
+[Input1] --> [Core]
+
+[Core] --> [Circular Shift]
+[Circular Shift] --> [Core]
+
+[Core] --[Alphabetizing]
+[Alphabetizing] --> [Core]
+[Alphabetizing] --> [Output]
+[Input1] --> [Output]
+
+@enduml

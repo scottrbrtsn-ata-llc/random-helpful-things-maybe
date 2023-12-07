@@ -1,0 +1,23 @@
+@startuml
+
+package "Mod2" {
+  [Line Storage]
+  [Input2]
+  [Circular Shift2]
+  [Alphabetizer2]
+  [Output2]
+
+}
+
+[My File2] --> [Input2]
+[Input2] --> [Line Storage]
+[Line Storage]--> [InternalMem]
+
+[Hidden Shift Computation] --> [Circular Shift2]
+[Circular Shift2] --> [Line Storage]
+
+[Alphabetizer2] --> [Line Storage]
+[Alpha Index Computation] --> [Alphabetizer2]
+[Circular Shift2] --> [Output2]
+
+@enduml
