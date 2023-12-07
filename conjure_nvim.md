@@ -10,7 +10,7 @@
 
 ### Connecting to project clj repl
 1. run your nREPL via cider middleware in the project root dir (contains `deps.edn`)
-```clj -Sdeps '{:deps {nrepl/nrepl {:mvn/version "1.0.0"} cider/cider-nrepl {:mvn/version "0.40.0"}}}'     --main nrepl.cmdline     --middleware '["cider.nrepl/cider-middleware"]'     --interactive```
+  1. ```clj -Sdeps '{:deps {nrepl/nrepl {:mvn/version "1.0.0"} cider/cider-nrepl {:mvn/version "0.40.0"}}}'     --main nrepl.cmdline     --middleware '["cider.nrepl/cider-middleware"]'     --interactive```
   1. consider setting an `alias cnj={the above command}`
 1. open a file in your project.  It should pick up the same nREPL port via the .nrepl-port file created by `clj`
   1. if not `:ConjureConnect: {.nrepl-port}`
@@ -20,11 +20,6 @@
 1. open a file in your project
 1. `:ConjureShadowSelect {key from edn}` 
   1. TODO: [make this a hook when `.cljs` files load](https://github.com/Olical/conjure/issues/318). 
-
-```clj -Sdeps '{:deps {nrepl/nrepl {:mvn/version "1.0.0"} cider/cider-nrepl {:mvn/version "0.40.0"}}}'     --main nrepl.cmdline     --middleware '["cider.nrepl/cider-middleware"]'     --interactive```
-  1. consider setting an `alias cnj={the above command}`
-1. open a file in your project.  It should pick up the same nREPL port via the .nrepl-port file created by `clj`
-  1. if not `:ConjureConnect: {.nrepl-port}`
 
 ### Common commands
 - evaluate Visual line selection `S-V <local-leader> E` 
