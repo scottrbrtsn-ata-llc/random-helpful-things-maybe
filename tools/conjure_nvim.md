@@ -6,7 +6,8 @@
 `use { "Olical/conjure" }`
 
 #### Install shadow-cljs
-`npm install shadow-cljs -g`
+-`npm install shadow-cljs -g`
+- [Shadow-CLJS docs](https://shadow-cljs.github.io/)
 
 ### Connecting to project clj repl
 1. run your nREPL via cider middleware in the project root dir (contains `deps.edn`)
