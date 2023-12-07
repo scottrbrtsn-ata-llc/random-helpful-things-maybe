@@ -17,6 +17,9 @@
 
 ### Connecting to shadow-cljs repl
 1. run `shadow-cljs compile {key from shadow-cljs.edn}` next to the edn.
+1. run `shadow-cljs cljs-repl {key from edn}`
+1. You have to goto `localhost:8080` or wherever the cljs-repl tells you in order to spin up node. 
+  1. else you'll get [Missing JS runtime](https://shadow-cljs.github.io/docs/UsersGuide.html#missing-js-runtime)
 1. open a file in your project
 1. `:ConjureShadowSelect {key from edn}` 
   1. TODO: [make this a hook when `.cljs` files load](https://github.com/Olical/conjure/issues/318). 
