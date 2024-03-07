@@ -22,48 +22,46 @@
             allowUnfree = true; 
           };
         };
-        julia-env = pkgs.julia.withPackages [ "Pluto" "FileIO" "JLD2" "PythonCall"];
         shell-env = pkgs.buildEnv rec { 
           name = "shell-env";       
           paths = [
-             julia-env
-             pluto
+          socatsend
+          socatreceive
             ];
         };
-        pluto = pkgs.writeShellScriptBin "pluto" ''
+        socatsend = pkgs.writeShellScriptBin "socatsend" ''
           #!/usr/bin/env bash
-          HOST="0.0.0.0" # Default host
-          PORT=1234      # Default port
-
-          # Parse command-line arguments for --host and --port
-          while [[ "$#" -gt 0 ]]; do
-              case $1 in
-                  --host) HOST="$2"; shift ;;
-                  --port) PORT="$2"; shift ;;
-                  *) echo "Unknown parameter passed: $1"; exit 1 ;;
-              esac
-              shift
-          done
-
-          ${julia-env}/bin/julia -e "using Pluto; Pluto.run(host=\"$HOST\", port=$PORT)"
+          echo "hello" | ${pkgs.socat}/bin/socat - udp-sendto:255.255.255.255:5000
         '';
-        shell-img = pkgs.dockerTools.buildNixShellImage {
-          name = "shell-container" ;
+
+        socatreceive = pkgs.writeShellScriptBin "socatreceive" ''
+          #!/usr/bin/env bash
+          ${pkgs.socat}/bin/socat - udp4-listen:5000,reuseaddr,fork
+        '';
+
+        socat-send-img = pkgs.dockerTools.buildNixShellImage {
+          name = "socat-send" ;
           tag = "latest";
           drv = shell;
-          command = ''${pluto}/bin/pluto --port ${PORT:-1234}'';
+          command = ''${socatsend}/bin/socatsend'';
+        };
+        socat-receive-img = pkgs.dockerTools.buildNixShellImage {
+          name = "socat-receive" ;
+          tag = "latest";
+          drv = shell;
+          command = ''${socatreceive}/bin/socatreceive'';
         };
         shell = pkgs.mkShell {
             buildInputs = [ (shell-env) ];
             shellHook = ''
-            echo "Example Shell Container with Pluto.jl" | ${pkgs.figlet}/bin/figlet
+            echo "Example Shell Container with socat" | ${pkgs.figlet}/bin/figlet
             '';
           };
       in
       {
         packages = {
-          container = shell-img;
-          pluto = pluto;
+          socat-sent-container = socat-send-image;
+          socat-receive-container = socat-receive-image;
         };
 
         devShells.default = shell;
