@@ -30,12 +30,10 @@
             ];
         };
         socatsend = pkgs.writeShellScriptBin "socatsend" ''
-          #!/usr/bin/env bash
           echo "hello" | ${pkgs.socat}/bin/socat - udp-sendto:255.255.255.255:5000
         '';
 
         socatreceive = pkgs.writeShellScriptBin "socatreceive" ''
-          #!/usr/bin/env bash
           ${pkgs.socat}/bin/socat - udp4-listen:5000,reuseaddr,fork
         '';
 
@@ -43,13 +41,13 @@
           name = "socat-send" ;
           tag = "latest";
           drv = shell;
-          command = ''${socatsend}/bin/socatsend'';
+          command = ''${pkgs.bash}/bin/bash ${socatsend}/bin/socatsend'';
         };
         socat-receive-img = pkgs.dockerTools.buildNixShellImage {
           name = "socat-receive" ;
           tag = "latest";
           drv = shell;
-          command = ''${socatreceive}/bin/socatreceive'';
+          command = ''${pkgs.bash}/bin/bash ${socatreceive}/bin/socatreceive'';
         };
         shell = pkgs.mkShell {
             buildInputs = [ (shell-env) ];
@@ -60,8 +58,8 @@
       in
       {
         packages = {
-          socat-sent-container = socat-send-image;
-          socat-receive-container = socat-receive-image;
+          socat-send-container = socat-send-img;
+          socat-receive-container = socat-receive-img;
         };
 
         devShells.default = shell;
