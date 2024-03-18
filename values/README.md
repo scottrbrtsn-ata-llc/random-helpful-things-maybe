@@ -18,18 +18,18 @@
 ### Robust testing
 
 1. Sufficient and necessary testing of the limitations of our system.
-  1. e.g. edge cases, deploy from zero, limitations at scale.
+    1. e.g. edge cases, deploy from zero, limitations at scale.
 
 ### Sane integration and deployment processes
 
 1. Automation is King.  The "C" in CI/CD, is continuous == automated/automatic.
-  1. Opening a PR should trigger checks, builds, tests...etc...
-  1. Merging to a default branch should check all the things, and deploy. 
+    1. Opening a PR should trigger checks, builds, tests...etc...
+    1. Merging to a default branch should check all the things, and deploy. 
 1. Deployments should never interrupt user/stakeholder behavior.
-  1. A/B deployments, rollbacks, etc...
-  1. See "Sane integration and deployment"
+    1. A/B deployments, rollbacks, etc...
+    1. See "Sane integration and deployment"
 1. Nix
-  1. reproducible, reliable builds.
+    1. reproducible, reliable builds.
 1. The cloud is for deployments. We should not be developing directly in the cloud. 
 1. We should always be able to develop without blocking, interrupting, nor breaking one another's efforts.
 
