@@ -45,8 +45,11 @@
 
 ### State of the art hardware
 
+1. In 2024, operating without GPUs is not a recipe for success. 
+
 ### Design Reviews?
 
+1. ADRs and other design processes to allow alternative opinions should be in place.
 
 ### Sane business practices
 1. We should not be paying, or managing (which is its own cost) for infrastructure, when we have no paying customers.
