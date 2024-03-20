@@ -16,6 +16,7 @@
 1. Any sliver of development should be able to be done end-to-end on an individual laptop.
 1. Working on [state of the art hardware](https://github.com/scottrbrtsn-ata-llc/random-helpful-things-maybe/tree/master/values#state-of-the-art-hardware) under our desk forces us to understand our technology, optimize with best practices, and ensure robust capability by constraining what is available.
 1. Working in a constrained environment also [reduces cognitive load](https://github.com/scottrbrtsn-ata-llc/random-helpful-things-maybe/tree/master/values#reduced-cognitive-load) as we remove extraneous layers (e.g. kubernetes, manual build/integration/deployment pipelines)
+1. At the end of the development process, with proper constraints, we may find ourselves with a solution containing both the qualities of necessary AND suffiecient, nothing more, and nothing less.
 
 ### Robust testing
 
