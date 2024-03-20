@@ -15,18 +15,19 @@
 
 1. Any sliver of development should be able to be done end-to-end on an individual laptop.
 1. Working on [state of the art hardware](https://github.com/scottrbrtsn-ata-llc/random-helpful-things-maybe/tree/master/values#state-of-the-art-hardware) under our desk forces us to understand our technology, optimize with best practices, and ensure robust capability by constraining what is available.
-1. Working in a constrained environment also [reduces cognitive load](https://github.com/scottrbrtsn-ata-llc/random-helpful-things-maybe/tree/master/values#reduced-cognitive-load) as we remove extraneous layers (e.g. kubernetes, build/integration/deployment pipelines)
+1. Working in a constrained environment also [reduces cognitive load](https://github.com/scottrbrtsn-ata-llc/random-helpful-things-maybe/tree/master/values#reduced-cognitive-load) as we remove extraneous layers (e.g. kubernetes, manual build/integration/deployment pipelines)
 
 ### Robust testing
 
 1. Sufficient and necessary testing of the limitations of our system.
     1. e.g. edge cases, deploy from zero, limitations at scale.
 
-### Sane integration and deployment processes
+### Sane, automated, integration and deployment processes
 
 1. Automation is King.  The "C" in CI/CD, is continuous == automated/automatic.
     1. Opening a PR should trigger checks, builds, tests...etc...
     1. Merging to a default branch should check all the things, and deploy. 
+1. One UX principle aims at reducing clicks for users. Efforts to reduce clicks and even keystrokes are paramount.
 1. Deployments should never interrupt user/stakeholder behavior.
     1. A/B deployments, rollbacks, etc...
     1. See "Sane integration and deployment"
