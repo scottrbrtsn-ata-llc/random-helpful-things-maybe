@@ -43,6 +43,7 @@
 1. [Dijkstra was outspoken about this](https://quotefancy.com/quote/1164258/Edsger-W-Dijkstra-Programming-in-Basic-causes-brain-damage)
     1. He also wrote a letter, where he speaks of [the goto statement is considered harmful](https://dl.acm.org/doi/10.1145/362929.362947)
     1. These ideas touch on things we must consider: certain practices in software engineering could actually be physically, literally, harming our brains, and each other.
+    1. [On simplicity and clarity](https://quotefancy.com/quote/1164196/Edsger-W-Dijkstra-How-do-we-convince-people-that-in-programming-simplicity-and-clarity-in)
     1. What kinds of practices might contribute to our trauma in today's software industry?
 
 ### Robust communication methods in a remote world.
