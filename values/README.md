@@ -27,7 +27,7 @@
 1. Automation is King.  The "C" in CI/CD, is continuous == automated/automatic.
     1. Opening a PR should trigger checks, builds, tests...etc...
     1. Merging to a default branch should check all the things, and deploy. 
-1. One UX principle aims at reducing clicks for users. Efforts to reduce clicks and even keystrokes are paramount.
+    1. There exists a UX principle aiming at reducing clicks for users. Efforts to reduce clicks and even keystrokes are paramount. They can even [reduce cognitive load](https://github.com/scottrbrtsn-ata-llc/random-helpful-things-maybe/tree/master/values#reduced-cognitive-load)
 1. Deployments should never interrupt user/stakeholder behavior.
     1. A/B deployments, rollbacks, etc...
     1. See "Sane integration and deployment"
