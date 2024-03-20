@@ -15,6 +15,7 @@
 
 1. Any sliver of development should be able to be done end-to-end on an individual laptop.
 1. Working on [state of the art hardware](https://github.com/scottrbrtsn-ata-llc/random-helpful-things-maybe/tree/master/values#state-of-the-art-hardware) under our desk forces us to understand our technology, optimize with best practices, and ensure robust capability by constraining what is available.
+1. Working in a constrained environment also [reduces cognitive load](https://github.com/scottrbrtsn-ata-llc/random-helpful-things-maybe/tree/master/values#reduced-cognitive-load) as we remove extraneous layers (e.g. kubernetes, build/integration/deployment pipelines)
 
 ### Robust testing
 
@@ -33,6 +34,14 @@
     1. reproducible, reliable builds.
 1. The cloud is for deployments. We should not be developing directly in the cloud. 
 1. We should always be able to develop without blocking, interrupting, nor breaking one another's efforts.
+
+### Reduced cognitive load
+1. We want long careers in software, but the growth of perceived complexity is becoming unmanageable.
+1. Reducing cognitive load buffers against: burnout, attrition, poor onboarding, etc...
+1. [Dijkstra was outspoken about this](https://quotefancy.com/quote/1164258/Edsger-W-Dijkstra-Programming-in-Basic-causes-brain-damage)
+    1. He also wrote a letter, where he speaks of [the goto statement is considered harmful](https://dl.acm.org/doi/10.1145/362929.362947)
+    1. These ideas touch on things we must consider: certain practices in software engineering could actually be physically, literally, harming our brains, and each other.
+    1. What kinds of practices might contribute to our trauma in today's software industry?
 
 ### Robust communication methods in a remote world.
 
