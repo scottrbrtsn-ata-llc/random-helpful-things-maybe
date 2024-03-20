@@ -14,6 +14,7 @@
 ### Sane development processes
 
 1. Any sliver of development should be able to be done end-to-end on an individual laptop.
+1. Working on [state of the art hardware](https://github.com/scottrbrtsn-ata-llc/random-helpful-things-maybe/tree/master/values#state-of-the-art-hardware) under our desk forces us to understand our technology, optimize with best practices, and ensure robust capability by constraining what is available.
 
 ### Robust testing
 
