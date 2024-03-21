@@ -1,0 +1,11 @@
+version:  '3'
+services:
+  nsorflow-notebook:
+    image: jupyter/base-notebook:latest
+    volumes:
+      - $PWD/work:/home/jovyan/work
+      - $PWD/work/datasets:/home/jovyan/work/datasets
+      - $PWD/work/modules:/home/jovyan/work/modules
+    ports:
+      - 0.0.0.0:8888:8888
+    container_name: jupyter_notebook
